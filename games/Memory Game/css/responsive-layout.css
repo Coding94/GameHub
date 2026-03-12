@@ -1,0 +1,32 @@
+@media (max-width: 768px) {
+
+.GAME {
+display: grid;
+
+
+grid-template-columns: 1fr 1fr;
+grid-template-rows: auto auto;
+
+grid-template-areas:
+  "left-bar right-bar"
+  "middle-bar middle-bar";
+
+gap: 0.75rem;
+margin: 0 10px;
+
+
+}
+
+.left-bar {
+grid-area: left-bar;
+}
+
+.right-bar {
+grid-area: right-bar;
+}
+
+.middle-bar {
+grid-area: middle-bar;
+}
+
+}

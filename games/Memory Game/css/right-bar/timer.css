@@ -1,0 +1,18 @@
+#timer {
+  font-family: 'Fredoka One', cursive;
+  font-size: 22px;
+  font-weight: bold;
+  color: #745757;
+  background-color: #6a8e64;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  margin-top: 20px;
+  text-shadow: 0 0 5px #fff;
+  text-align: center;  /* center timer text */
+  width: 120px; /* prevents resizing */
+}
+
+
+

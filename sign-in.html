@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In – LILLO</title>
+  <link rel="stylesheet" href="./css/sign-in.css">
+</head>
+<body>
+  <div class="page-wrapper-2">
+    <header>
+      <h1>LILLO</h1>
+    </header>
+
+    <main>
+      <section class="login-section">
+        <h2>Sign In</h2>
+
+        <form id="login-form">
+          <!-- Email + Password fields always visible -->
+          <input type="email" id="email" placeholder="Email">
+          <input type="password" id="password" placeholder="Password">
+
+          <!-- Signup section (hidden by default) -->
+          <input type="password" id="confirm-password" placeholder="Confirm Password" style="display:none;">
+
+          <input type="text" id="username" placeholder="Username" style="display:none;">
+
+          <div class="login-buttons">
+            <button id="login-btn">Login</button>
+            <button id="show-signup-btn">Sign Up</button>
+          </div>
+
+          <div id="signup-error" style="color:red; font-size:0.9rem; display:none;"></div>
+
+          <button id="signup-btn" style="display:none;">Create Account</button>
+
+        </form>
+
+        <p class="back-home"><a href="index.html">← Back to Homepage</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <nav>
+        <ul class="ending-nav">
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2025 LILLO</p>
+    </footer>
+  </div>
+
+  <script type="module" src="./js/auth.js"></script>
+</body>
+</html>

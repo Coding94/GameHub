@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title >Lillo</title>
+  <link rel="stylesheet" href="./css/homepage.css">
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Baloo+2&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Header -->
+    <header>
+      <div class="header-container">
+        <div class="left-header">
+          <h1>LILLO</h1>
+          <nav>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Games</a></li>
+              <li><a href="#">News</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="right-header">
+          <span id="display-username"></span>
+          <a href="sign-in.html" id="signin-link">Sign Up / Sign In</a>
+          <a id="signout-btn" style="display:none;">Sign Out</a>    
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <section>
+        <h2>Online Games – Play, Think, Learn!</h2>
+        <p>Online Players: N/A</p>
+        <div class="games">
+          <a class="game-card" href="games/Memory Game/index.html">
+            <img src="assets/images/memory.png" alt="Memory Game">
+            <p>Memory Game</p>
+          </a>
+
+          <a class="game-card" href="games/Spin the Wheel/index.html">
+            <img src="assets/images/wheel.png" alt="Spin the Wheel">
+            <p>Spin the Wheel</p>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <nav>
+        <ul class="ending-nav">
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2025 Lillo </p>
+    </footer>
+  </div>
+
+  <!-- JS to handle auth display -->
+  <script type="module" src="./js/home-auth.js"></script>
+</body>
+</html>

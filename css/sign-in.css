@@ -1,0 +1,135 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body uses flex column to place header, main, footer vertically */
+body {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #e1cba1;
+  color: #623e21;
+}
+
+.page-wrapper-2 {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;          /* full viewport height */
+  justify-content: space-between; /* header at top, footer at bottom, main in middle */
+  align-items: center;
+}
+
+/* Header at top */
+header {
+  background-color: #623e21;
+  padding: 10px 20px;
+  width: 100%;
+  color: #eee;
+}
+
+header h1 {
+  text-align: center;
+  color: #eee;
+}
+
+/* Main content takes remaining space */
+main {
+  display: flex;
+  justify-content: center;  /* center horizontally */
+  align-items: center;      /* center vertically */
+  flex: 1;                  /* takes all remaining space */
+  width: 100%;
+}
+
+/* Login card */
+.login-section {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 400px;
+  background-color: #f3e5d1;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  text-align: center;
+  gap: 15px;
+}
+
+#login-form{
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.login-section h2 {
+  margin-bottom: 20px;
+}
+
+.login-section input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #623e21;
+  border-radius: 4px;
+}
+
+.login-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.login-buttons button {
+  padding: 10px 20px;
+  background-color: #623e21;
+  color: #eee;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-buttons button:hover {
+  background-color: #8b5e3c;
+}
+
+.back-home a {
+  color: #623e21;
+  text-decoration: none;
+}
+
+.back-home a:hover {
+  text-decoration: underline;
+}
+
+/* Footer at bottom */
+footer {
+    width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #e8e0e0;
+  background-color: #623e21;
+  padding: 20px;
+}
+
+.ending-nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding-bottom: 10px;
+}
+
+.ending-nav a {
+  color: #e8e0e0;
+  text-decoration: none;
+}
+
+.ending-nav a:hover {
+  text-decoration: underline;
+}

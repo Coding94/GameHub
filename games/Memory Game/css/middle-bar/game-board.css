@@ -1,0 +1,101 @@
+/* -------------------- GAME BOARD -------------------- */
+.game-board {
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+
+  width: 80%;
+  max-width: 900px;
+  margin: 20px auto;
+
+  background-color: #6a8e64;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 6px #333;
+
+    margin-top: 40px;
+}
+
+/* -------------------- CARD -------------------- */
+.card {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8 / 10; /* Proper playing card ratio */
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+
+/* -------------------- CARD INNER -------------------- */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* -------------------- CARD IMAGES -------------------- */
+.card-inner img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;   /* no auto spacing */
+  border-radius: 8px;
+  box-shadow: 2px 2px 6px #333;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+/* ONE back rule only */
+.card-inner .back {
+  transform: rotateY(0deg);
+  padding: 0;         /* (or your custom padding) */
+  /* IMPORTANT: do NOT set object-fit here */
+}
+
+
+/* -------------------- BACK SIDE -------------------- */
+.card-inner .back {
+  background-color: #74654e; /* brown */
+
+}
+
+/* -------------------- FRONT SIDE -------------------- */
+.card-inner .front {
+  background-color: #457d56; /* 🔥 your original dark green */
+  transform: rotateY(180deg);
+}
+
+/* -------------------- FLIP ANIMATION -------------------- */
+.card.flipped .card-inner .back {
+  transform: rotateY(180deg);
+  
+}
+
+.card.flipped .card-inner .front {
+  transform: rotateY(0deg);
+}
+
+/* -------------------- MATCHED ANIMATION -------------------- */
+.card.matched {
+  animation: fadeOut 0.6s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    transform: scale(1) rotateY(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0) rotateY(0deg);
+    opacity: 0;
+  }
+}
+
+
+
+
+

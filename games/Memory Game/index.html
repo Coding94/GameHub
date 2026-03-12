@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Memory Game</title>
+    <link rel="icon" type="image/png" href="images/leaf.png">
+    <link rel="stylesheet" href="./css/body.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/responsive-layout.css" />
+
+      <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Baloo+2&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+  <!-- Place this where you want the timer to appear -->
+   
+    <div class="page-wrapper">
+      <main class = "GAME">
+
+        <div class="left-bar">
+          <div class="score-list">
+            <div class="high-scores-container">
+              <h2 class="high-scores-title"> Leaderboard</h2>
+              <ul id="high-scores"></ul>
+                <!-- JS will populate scores here -->
+            </div>
+          </div>
+        </div>
+
+        <div class="middle-bar">
+
+          <div class="game-board">
+            <!-- Example card (your JS will generate these) -->
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-front"></div>
+                <div class="card-back"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-bar">
+          <div id="timer-container">
+            <div id="timer">
+              <div class="timer-label">Timer</div>
+              <div id="timer-value"> 00:00:00 </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <audio id="flipSound" src="./assets/sounds/flip-card.mov" preload="auto"></audio>
+    <audio id="flipBackSound" src="./assets/sounds/flip-back.mov" preload="auto"></audio>
+    <audio id="matchSound" src="./assets/sounds/match-card.wav" preload="auto"></audio>
+    <audio id="doneSound" src="./assets/sounds/done.mp3" preload="auto"></audio>
+
+    <script type="module" src="./js/main.js"></script>
+
+
+
+  </body>
+</html>
+
+
+

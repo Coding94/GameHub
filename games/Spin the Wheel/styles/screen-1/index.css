@@ -1,0 +1,9 @@
+@import './body.css';
+
+@import './left-bar/score.css';
+
+@import './middle-bar/wheel.css';
+@import './middle-bar/result.css';
+
+@import './right-bar/leaderboard.css';
+

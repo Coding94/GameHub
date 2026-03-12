@@ -1,0 +1,398 @@
+/*  IDs
+1B) Wheel Wrapper
+2B) Wheel Borders
+3B) Wheel Segments
+4B) Wheel Segment Borders
+5B) Spin Button
+6B) Mutual Wrapper Styles
+7B) Mutual Border Styles
+*/
+
+/* ===================== */
+/* 1B) WHEEL WRAPPER     */
+/* ===================== */
+
+.wheel-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  
+
+  width: 100%;             /* fill available column space */
+  max-width: 440px;        /* limit maximum size */
+  aspect-ratio: 1 / 1;     /* keep perfect circle */
+  
+  border-radius: 50%;
+  background-blend-mode: overlay;
+
+  box-shadow: inset -2px -2px 4px rgba(0,0,0,0.4),
+              4px 4px 12px rgba(0,0,0,0.3);
+
+  justify-self: center;     /* center horizontally in grid */
+  align-self: center;       /* center vertically in grid */
+}
+
+
+@media (max-width: 400px) and (max-height: 700px){
+
+      .wheel-wrapper {
+  width: 100%;     
+    max-width: 300px;
+  
+  }
+
+  .page-wrapper {
+    flex-direction: column;
+  }
+
+  #game-container {
+    flex: none;
+    width: 100%;
+
+    /* Two columns for top row */
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "left-bar right-bar"
+      "middle-bar middle-bar";
+  }
+
+  .left-bar,
+  .right-bar {
+    width: 100%;
+   padding-bottom: 20px;
+   padding-top: 20px;
+    justify-content: center;
+  }
+
+  .middle-bar {
+    justify-content: center;
+    align-items: center;
+  }
+
+ 
+
+  .page-wrapper > .ad {
+    flex: none;
+    width: 100%;
+    min-height: 120px;
+  }
+}
+
+@media (max-width: 450px) and (min-height: 701px){
+
+  .wheel-wrapper {
+  width: 100%;     
+  max-width: 400px;
+  
+  }
+  body{
+    margin-top: 50px;
+  }
+
+
+  .page-wrapper {
+    flex-direction: column;
+  }
+
+  #game-container {
+    flex: none;
+    width: 100%;
+
+    /* Two columns for top row */
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "left-bar right-bar"
+      "middle-bar middle-bar";
+  }
+
+  .left-bar,
+  .right-bar {
+    width: 100%;
+   padding-bottom: 20px;
+   padding-top: 20px;
+    justify-content: center;
+  }
+
+  .middle-bar {
+    justify-content: center;
+    align-items: center;
+  }
+
+ 
+
+  .page-wrapper > .ad {
+    flex: none;
+    width: 100%;
+    min-height: 120px;
+  }
+}
+
+
+/* ===================== */
+/* 2B) WHEEL BORDERS     */
+/* ===================== */
+
+.border {
+  position: absolute;
+  width: 88%;          /* slightly smaller than 92% */
+  height: 88%;         /* slightly smaller than 92% */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 5;          /* below wheel (10) but above wrapper (0) */
+}
+
+/* ===================== */
+/* 3B) WHEEL (SEGMENTS)  */
+/* ===================== */
+
+.wheel {
+  position: absolute;
+  width: 86%;
+  height: 86%;
+  border-radius: 50%;
+  z-index: 10;
+
+  transition: transform 4s cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* Inner depth */
+  box-shadow:
+    inset 0 0 16px 4px rgba(0, 0, 0, 0.45),
+    inset 0 0 8px 2px rgba(255, 255, 255, 0.22);
+
+  /*filter: saturate(0.75) brightness(0.95) contrast(1.12);*/
+filter: saturate(0.7) brightness(0.9) contrast(1.1);
+}
+
+
+
+/* ========================= */
+/* 4B) WHEEL SEGMENT BORDERS */
+/* ========================= */
+
+.wheel-borders {
+  position: absolute;
+  width: 100%;         /* match wheel width */
+  height: 100%;        /* match wheel height */
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 2;
+  background: transparent;
+}
+
+.wheel-borders div {
+  position: absolute;
+  bottom: 50%;         /* start at wheel center */
+  left: 50%;
+  width: 2px;
+  height: 50%;         /* half of parent (wheel) height */
+
+  background: linear-gradient(
+    to top,
+    #b2885e 0%,   /* slightly lighter center */
+    #8b5a2b 100%  /* darker edge */
+  );
+
+  box-shadow: 
+    inset -1px -1px 2px rgba(0,0,0,0.3),
+    inset 1px 1px 2px rgba(255,255,255,0.15);
+
+  transform-origin: 50% 100%;
+  margin-left: -1px;   /* center line perfectly */
+}
+
+/* ===================== */
+/* 5B) SPIN BUTTON       */
+/* ===================== */
+
+.spin-button-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22%;             /* slightly bigger than button */
+  height: 22%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+
+  background-blend-mode: overlay;
+  
+  box-shadow:
+    inset -6px -6px 14px rgba(0, 0, 0, 0.55),
+    inset 4px 4px 8px rgba(255, 255, 255, 0.18),
+    6px 6px 16px rgba(0, 0, 0, 0.35);
+  
+  z-index: 999;  /* below button */
+}
+
+.spin-button-inner-border {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 74%;         
+  height: 74%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  
+  /* match .border style */
+  /* below button but above spin-button-border */
+}
+
+.spin-button {
+
+  font-family: 'Fredoka One', cursive;
+  color: #7a5a3a;
+    /* Make font size scale with button size */
+display: flex;
+align-items: center;
+justify-content: center;
+
+
+   /* Scales with button but limits min/max sizes */
+  font-size: clamp(12px, 2vw, 15px);
+
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 70%;
+  border: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+
+  background: radial-gradient(
+    circle at top left,
+    #fff3dc,   /* subtle highlight */
+    #f8e6c5 70%  /* main warm tone */
+  );
+
+  box-shadow:
+    inset 2px 2px 4px rgba(255, 255, 255, 0.6),
+    inset -3px -3px 6px rgba(0, 0, 0, 0.35),
+    4px 4px 10px rgba(0, 0, 0, 0.35);
+
+  transition: all 0.1s ease;
+}
+
+.spin-button.pressed {
+  transform: translate(-50%, -50%) scale(0.97);   /* slight shrink */
+
+  background: radial-gradient(
+    circle at bottom right,
+    #f8e6c5,   /* slightly darker highlight shift */
+    #e6c29a 70%  /* pressed warm tone */
+  );
+
+  box-shadow:
+    inset -2px -2px 4px rgba(0, 0, 0, 0.4),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.3),
+    3px 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+
+.wheel-icon {
+  position: absolute; /* lock to wheel center */
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  width: 12%;        /* adjust icon size */
+  height: 12%;
+}
+
+.wheel-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ========================= */
+/* 6B) MUTUAL WRAPPER STYLES */
+/* ========================= */
+
+.wheel-wrapper, .spin-button-wrapper{
+  background: 
+    radial-gradient(circle at top left, #c2996f 0%, #8b5a2b 65%, #5a381e 100%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(0,0,0,0.05) 0,
+      rgba(0,0,0,0.05) 2px,
+      transparent 2px,
+      transparent 6px
+    );
+} 
+
+
+/* ========================= */
+/* 7B) MUTUAL BORDERS STYLES */
+/* ========================= */
+
+.border, .spin-button-inner-border{
+  background: radial-gradient(
+    circle at center,
+    #b2885e 0%,   /* slightly lighter than wrapper mid-tone for depth */
+    #8b5a2b 100%  /* matches wrapper mid-tone exactly at edge */
+  );
+
+  box-shadow:
+    /* inner shadow — wheel sits inside the ring */
+    inset -3px -3px 6px rgba(0, 0, 0, 0.45),
+
+    /* highlight — light from top-left */
+    inset 2px 2px 4px rgba(255, 255, 255, 0.25),
+
+    /* outer shadow — lift from background */
+    0 3px 6px rgba(0, 0, 0, 0.35);
+
+}
+
+.leaderboard{
+
+  padding: 4%;
+
+}
+
+
+
+
+
+
+/* ===================== */
+/* SVG POINTER           */
+/* ===================== */
+
+/*
+.pointer {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+  width: 30px;
+  fill: #cecc8c;
+  z-index: 30;
+  pointer-events: none;
+}
+
+.pointer path {
+  fill: #d9b272;     /* warm nostalgic tone */
+  /*stroke: #8b5a2b;   /* definition */
+  /*stroke-width: 1; 
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+

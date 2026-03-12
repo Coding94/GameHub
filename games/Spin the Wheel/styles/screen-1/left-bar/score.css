@@ -1,0 +1,45 @@
+/* =============================== */
+/*         SCORE + SPINS           */
+/* =============================== */
+
+#wheel-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em; /* was 20px */
+  z-index: 20;
+
+  
+}
+
+#wheel-info p {
+
+  font-family: 'Fredoka One', cursive;
+  font-size: clamp(16px, 2.2vw, 22px);
+
+  color: #fff3dc;
+  text-align: center;
+
+  padding: 0.75em 1.1em;
+
+  text-shadow: 0.06em 0.06em 0.18em rgba(0,0,0,0.4);
+
+  border-radius: 50%;
+
+  box-sizing: border-box;
+}
+
+#spin-count,
+#score-container {
+  box-shadow: inset -0.12em -0.12em 0.25em rgba(0,0,0,0.4),
+              0.25em 0.25em 0.75em rgba(0,0,0,0.3);
+
+  background: 
+    radial-gradient(circle at top left, #c2996f 0%, #8b5a2b 65%, #5a381e 100%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(0,0,0,0.05) 0,
+      rgba(0,0,0,0.05) 0.12em,
+      transparent 0.12em,
+      transparent 0.35em
+    );
+}

@@ -1,0 +1,73 @@
+.high-scores-container{
+
+  display: flex;
+  flex-direction: column;
+  font-family: 'Fredoka One', cursive;
+
+  background-color: #8d6543;
+  padding: 10px 10px;
+  color: #816767;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  margin-top: 20px;
+
+}
+
+.high-scores-title{
+text-shadow: 0 0 5px #fff;
+margin:10px;
+padding: 0;
+text-align: center;
+font-size: 1.5em;
+}
+
+
+#high-scores {
+  margin: 0;
+  padding: 5px 10px;
+  color: #816767;
+}
+
+
+#high-scores li {
+  font-family: 'Fredoka One', cursive;
+  display: flex;
+  list-style: none;
+  margin: 5px 0;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background-color: #aa7a50;
+  
+  position: relative;      /* allow absolute positioning of time */
+  padding-right: 120px;    /* space for the time on the right */
+
+  text-shadow: 0 0 5px #fff;
+  
+  overflow: visible;       /* allow glow to show outside */
+}
+
+.high-scores li .score-name {
+  display: inline-block;
+  max-width: 85px;       
+  white-space: nowrap;      /* no line break */
+  overflow: hidden;         /* truncate overflow */
+  text-overflow: ellipsis;  /* show "…" */
+  
+  /* Add a little left and right padding to avoid glow clipping */
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#high-scores li .score-time {
+
+  position: absolute;
+  right: 10px;                /* distance from right edge of li */
+  top: 50%;
+  transform: translateY(-50%); /* vertically center */
+}
+
+
+
+
+

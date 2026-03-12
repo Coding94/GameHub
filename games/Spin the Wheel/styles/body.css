@@ -1,0 +1,142 @@
+/* ===================== */
+/* BASE                  */
+/* ===================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: rgba(39, 57, 82, 0.9);
+  font-family: system-ui, sans-serif;
+  color: #fff;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ===================== */
+/* PAGE WRAPPER (DESKTOP) */
+/* ===================== */
+
+.page-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ===================== */
+/* GAME CONTAINER (80%)  */
+/* ===================== */
+
+#game-container {
+  flex: 0 0 80%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "left-bar middle-bar right-bar";
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* ===================== */
+/* RIGHT AD (20%)        */
+/* ===================== */
+
+.page-wrapper > .ad {
+  flex: 0 0 20%;
+  background: radial-gradient(circle at top left, #e6b87e, #cb844d 60%, #a65f2b 100%);
+}
+
+/* ===================== */
+/* BARS                  */
+/* ===================== */
+
+.left-bar,
+.middle-bar,
+.right-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+}
+
+.left-bar {
+  grid-area: left-bar;
+  /*background-color: rgb(155, 20, 20);*/
+  padding-top: 30px;
+}
+
+.middle-bar {
+  grid-area: middle-bar;
+  /*background-color: #44a62b;*/
+  justify-content: center;
+  align-items: center;
+}
+
+.right-bar {
+  grid-area: right-bar;
+  /*background-color: #a62b8f;*/
+  padding-top: 30px;
+}
+
+/* ===================== */
+/* WHEEL STABILITY       */
+/* ===================== */
+
+.wheel-wrapper {
+  width: 400px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+/* ===================== */
+/* MOBILE LAYOUT         */
+/* ===================== */
+
+@media (max-width: 768px)and (max-height: 700px){
+
+  .page-wrapper {
+    flex-direction: column;
+  }
+
+  #game-container {
+    flex: none;
+    width: 100%;
+
+    /* Two columns for top row */
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "left-bar right-bar"
+      "middle-bar middle-bar";
+  }
+
+  .left-bar,
+  .right-bar {
+    width: 100%;
+   padding-bottom: 20px;
+   padding-top: 20px;
+    justify-content: center;
+  }
+
+
+
+  .middle-bar {
+    justify-content: center;
+    align-items: center;
+  }
+
+ 
+
+  .page-wrapper > .ad {
+    flex: none;
+    width: 100%;
+    min-height: 120px;
+  }
+}

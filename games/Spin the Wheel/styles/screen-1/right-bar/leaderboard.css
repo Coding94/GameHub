@@ -1,0 +1,149 @@
+#leaderboard {
+  
+
+
+ 
+
+  background: 
+    radial-gradient(circle at top left, #8b6f3f 0%, #a18257 65%, #6b5230 100%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(0,0,0,0.05) 0,
+      rgba(0,0,0,0.05) 2px,
+      transparent 2px,
+      transparent 6px
+    );            
+
+  font-size: clamp(8px, 2vw, 16px); /* base scaling */
+
+  padding: 4% 6%;
+  box-sizing: border-box; /* includes padding in width */
+
+  border-radius: 1em;
+
+  box-shadow: inset -2px -2px 4px rgba(0,0,0,0.4),
+              4px 4px 12px rgba(0,0,0,0.3);
+
+
+  box-sizing: border-box;
+}
+
+
+
+
+#leaderboard-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.leaderboard-title {
+
+
+  font-family: 'Fredoka One', cursive;
+  font-size: clamp(10px, 2.2vw, 20px);
+  font-weight: bold;
+  color: #543e27;                
+  text-shadow:
+    0.06em 0.06em 0 rgba(0,0,0,0.3),
+    -0.06em -0.06em 0 rgba(255,255,255,0.15);
+
+  margin-bottom: 0.25em;
+  text-align: center;
+}
+
+.leaderboard{
+  font-family: 'Fredoka One', cursive;
+  font-size: 1em;
+  color: #543e27; 
+  text-shadow:
+    0.06em 0.06em 0 rgba(0,0,0,0.3),
+    -0.06em -0.06em 0 rgba(255,255,255,0.15);
+}
+
+.leaderboard-wrapper img{
+  width: 1.25em;
+}
+
+.leaderboard-wrapper button{
+  border-radius: 20%;
+  background-color: #a5885f;
+  padding-top: 0.125em;
+  border-color:#543e27;
+  height: 1.75em;
+}
+
+#leaderboard-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+  width: 100%;
+}
+
+#leaderboard-list .leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1em;
+  color: #543e27;
+  text-shadow:
+    0.06em 0.06em 0 rgba(0,0,0,0.3),
+    -0.06em -0.06em 0 rgba(255,255,255,0.15);
+
+  padding: 0.4em 0.75em;
+  border-radius: 0.75em;
+  background: rgba(255,255,255,0.05);
+}
+
+.player-name {
+  display: inline-block;
+  max-width: 7em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 0.75em;
+}
+
+.player-score {
+  flex: 0 0 auto;
+}
+
+.leaderboard-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25em;
+}
+
+/* Button container */
+.leaderboard-wrapper button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Button size scales with wrapper but stays reasonable */
+  width: clamp(1.2em, 2vw, 6em);
+  height: clamp(1.2em, 2vw, 6em);  /* min 2.5em, ideal 8% of parent, max 4em */
+
+  
+  aspect-ratio: 1 / 1;           /* ensures square button */
+
+  border-radius: 0.5em;
+  background-color: #a5885f;
+  border: 2px solid #543e27;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Image inside button */
+.leaderboard-wrapper button img {
+  width: 70%;             /* scales with button */
+  height: 70%;
+  object-fit: contain;    /* keeps aspect ratio */
+  display: block;
+}

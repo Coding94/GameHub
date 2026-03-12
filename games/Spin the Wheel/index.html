@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spin the Wheel</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/icons/wheel.png">
+
+  <!-- Base CSS -->
+  <link rel="stylesheet" href="./styles/body.css" />
+
+  <!-- Screen-specific CSS -->
+
+  <link rel="stylesheet" href="./styles/page.css" />
+
+  <link rel="stylesheet" href="./styles/screen-1/index.css" /> <!-- wheel, leaderboard, score -->
+  <link rel="stylesheet" href="./styles/screen-2/index.css" /> <!-- questions, timer -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Baloo+2&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+   <div class="page-wrapper">
+
+      <!-- Dynamic content container -->
+      <div id="game-container">
+        <!-- Wheel and question screens will be injected dynamically by game.js -->
+      </div>
+
+    <!-- sidebar ad -->
+    <div class="ad"> Advertisment
+    </div>
+
+  </div>
+
+  <!-- Main JS -->
+  <script type="module" src="./js/game.js"></script>
+</body>
+</html>

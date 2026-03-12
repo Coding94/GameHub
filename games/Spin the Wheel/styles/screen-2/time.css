@@ -1,0 +1,21 @@
+#timer {
+  position: absolute;
+  top: -110px;          /* distance from top of parent */
+  left: 50%;          /* start from 50% of parent width */
+  transform: translateX(-50%);  /* pull back half of its own width */
+  
+  font-family: 'Baloo 2', cursive;
+  font-variant-numeric: tabular-nums;
+  font-size: 28px;
+  font-weight: normal;
+  color: #fff3dc;
+  background-color: #555555;
+  width: auto;
+  white-space: nowrap;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 100;
+}

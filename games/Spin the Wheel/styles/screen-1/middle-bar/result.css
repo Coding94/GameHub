@@ -1,0 +1,15 @@
+/* ===================== */
+/* CATEGORY WHEEL RESULT */
+/* ===================== */
+
+.result {
+
+  position: absolute;
+  
+  top: -60px;
+  z-index: 1000;
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* keeps it readable */
+  color: #fff3dc;  /* same as title */
+}

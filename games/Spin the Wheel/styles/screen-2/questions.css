@@ -1,0 +1,165 @@
+/* ======================= */
+/* QUESTIONS SCREEN STYLES */
+/* ======================= */
+
+/* Full purple body background */
+body.questions-active {
+
+  background: radial-gradient(circle at top left, #e6b87e, #cb844d 60%, #a65f2b 100%);
+}
+
+#game-container.questions-active {
+  background: radial-gradient(circle at top left, #6a4b9c, #452864 60%, #2a1a43 100%);
+}
+
+/* ======================= */
+/* FIXED TOP HUD          */
+/* ======================= */
+
+/* Round points fixed top left */
+#round-points-container {
+
+  top: 20px;
+  left: 20px;
+
+  font-family: 'Fredoka One', cursive;
+  font-size: 22px;
+  color: #fff3dc;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 18px;
+  border-radius: 10px;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  z-index: 100;
+}
+/* ======================= */
+/* QUESTION CONTENT        */
+/* ======================= */
+
+.question-wrapper {
+  background-color: #413057;
+  width: 100%;
+  max-width: 850px;
+
+  /* center content nicely */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* QUESTION TEXT */
+.question-text {
+margin-top: 30px;
+   position: relative;
+  font-family: 'Baloo 2', cursive;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff3dc;
+  margin-bottom: 30px;
+  line-height: 1.4;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 10px;
+  word-wrap: break-word;
+}
+
+/* ======================= */
+/* ANSWER BUTTON STYLES    */
+/* ======================= */
+
+.answers-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 10px;
+  margin-bottom: 40px;
+}
+
+.answer-btn {
+  font-family: 'Baloo 2', cursive;
+  font-size: 18px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+
+  /* restored yellow/orange style */
+  background: linear-gradient(145deg, #ffd86f, #ffb347);
+  color: #5c2a00; /* dark brown text */
+  font-weight: bold;
+
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  flex: 1 1 45%;
+  text-align: center;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.answer-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(145deg, #ffe082, #ffbf4d);
+}
+
+.answer-btn.correct {
+  background: #2ecc71 !important;
+  color: #fff !important;
+}
+
+.answer-btn.wrong {
+  background: #e74c3c !important;
+  color: #fff !important;
+}
+
+.answer-btn:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* ======================= */
+/* HIDE TITLE DURING QUIZ  */
+/* ======================= */
+body.questions-active .game-title {
+  display: none;
+}
+
+/* Purple background during questions
+body.questions-active #game-container {
+  background: radial-gradient(circle at top left, #6a4b9c, #452864 60%, #2a1a43 100%);
+}*/
+
+/* ========================= */
+/* FLOATING POINTS ANIMATION */
+/* ========================= */
+
+.score-animation {
+  position: fixed;
+  top: 120px;                /* moved lower on screen */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff3dc;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  animation: floatUpCenter 1.5s ease-out forwards;
+  z-index: 200;
+}
+
+@keyframes floatUpCenter {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -60px);
+    opacity: 0;
+  }
+}
